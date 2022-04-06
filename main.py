@@ -22,7 +22,10 @@ def test_input(XO):  # XO может принимать значения X ил�
     field = ' '
     while not field[0].isdigit():
         field = input('Введите номер поля для ' + XO + ' (от 1 до 9): ')
-        fieldnum = int(field[0])
+        if field[0].isdigit():
+            fieldnum = int(field[0])
+        else:
+            continue
         if fieldnum < 1:
             field = ' '
         if board[fieldnum - 1].isdigit():
@@ -57,9 +60,8 @@ if __name__ == '__main__':
     for XO in iter(['X', 'O'] * 3 + ['X']):
         test_input(XO)
         print_board()
-        if len(is_win()) < 2: # Если в промежутке ничья, ничего не печатаем
+        if len(is_win()) < 2:  # Если в промежутке ничья, ничего не печатаем
             print(is_win() + ' победил!')
             exit(0)
     # На последнем ходу может быть победа, или ничья
     print(is_win() + ' победил!')
-    
