@@ -57,7 +57,7 @@ def is_win():
 if __name__ == '__main__':
     print_board()
     # Перебираем все 9 ходов для 'X' и для 'O'
-    for XO in iter(['X', 'O'] * 3 + ['X']):
+    for XO in iter(['X', 'O'] * 4 + ['X']):
         test_input(XO)
         print_board()
         if len(is_win()) < 2:  # Если в промежутке ничья, ничего не печатаем
