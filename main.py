@@ -28,6 +28,7 @@ def test_input(XO):  # XO может принимать значения X ил�
             continue
         if fieldnum < 1:
             field = ' '
+            continue
         if board[fieldnum - 1].isdigit():
             board[fieldnum - 1] = XO
         else:
